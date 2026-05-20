@@ -1,22 +1,24 @@
-# Pi Bruteforce | Number Finder
+<a name="readme-top"></a>
 
+<!-- PROJECT LOGO -->
+<br />
 <div align="center">
-
-[![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)](https://www.python.org/)
-
+  <h3 align="center">Pi Bruteforce | Number Finder</h3>
 </div>
 
+<!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-1. [Overview](#overview)
-2. [Features](#features)
-3. [Quick Start](#quick-start)
-4. [Usage Examples](#usage-examples)
-5. [Output Format](#output-format)
+- [About The Project](#about-the-project)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+- [Output Format](#output-format)
 
-<br>
-
-## 🎯 Overview
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
 **Pi Bruteforce** is a high-performance, multi-threaded tool for finding number sequences within the digits of Pi. According to the **Pi Search** theory, any finite sequence of digits should eventually appear in Pi including phone numbers, birthdays, SSNs, and more.
 
@@ -28,55 +30,44 @@
 - ♾️ **Unlimited results** - Finds every unique match in Pi
 - 📊 **JSON output** - Auto-generated filenames with comprehensive metadata
 
-<br>
+### Built With
 
-## ✨ Features
+* [![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)](https://www.python.org/)
 
-The tool supports multiple search modes with the following options:
+<!-- GETTING STARTED -->
+## Getting Started
 
-### Search Options
-- `--length N` - Length of numbers to find
-- `--starts-with P` - Pattern(s) to start with (comma-separated for multiple)
-- `--ends-with P` - Pattern(s) to end with
-- `--contains P` - Pattern(s) to contain
-- `--regex PATTERN` - Regex pattern matching
-- `--min N` / `--max N` - Range search (find all numbers between min and max)
-- `--precision N` - Number of Pi digits to search (default: 10,000,000)
+### Prerequisites
 
-### Performance Features
-- **Auto-threading** - Automatically uses all CPU cores
-- **Binary cache** - Stores Pi digits in compressed `.pkl.gz` format
-- **Auto-compute** - Automatically generates cache if missing
-- **Smart filenames** - Auto-generated based on search parameters
+Python 3.12 or newer.
 
-<br>
+### Installation
 
-## 🏃 Quick Start
+1. Clone the repo
+   ```sh
+   git clone https://github.com/cmpnn-romain/Pi-bruteforce.git
+   ```
+2. Make script executable
+   ```bash
+   chmod +x pi_brutforce.sh
+   ```
+3. Setup Dependencies
+   ```bash
+   ./pi_brutforce.sh --setup
+   ```
+4. Compute Pi Cache (First Time)
+   ```bash
+   ./pi_brutforce.sh --compute
+   ```
+   This creates a binary compressed cache (`pi_cache.pkl.gz`) for fast searches.
 
-### 1. Make Script Executable
-```bash
-chmod +x pi_brutforce.sh
-```
+<!-- USAGE EXAMPLES -->
+## Usage
 
-### 2. Setup Dependencies
-```bash
-./pi_brutforce.sh --setup
-```
-
-### 3. Compute Pi Cache (First Time)
-```bash
-./pi_brutforce.sh --compute
-```
-This creates a binary compressed cache (`pi_cache.pkl.gz`) for fast searches.
-
-### 4. View All Options
+View all options:
 ```bash
 ./pi_brutforce.sh --help
 ```
-
-<br>
-
-## 📖 Usage Examples
 
 ### Basic Pattern Matching
 ```bash
@@ -105,25 +96,8 @@ This creates a binary compressed cache (`pi_cache.pkl.gz`) for fast searches.
 ./pi_brutforce.sh --length 9 --starts-with 123,456,789
 ```
 
-### Legacy Direct Search
-```bash
-# Search for a specific number sequence
-./pi_brutforce.sh 123456
-```
-
-### Cache Management
-```bash
-# Compute cache with custom precision (100M digits)
-./pi_brutforce.sh --compute --precision 100000000
-```
-
-<br>
-
-## 📊 Output Format
-
+## Output Format
 All results are saved to auto-generated JSON files with comprehensive metadata:
-
-### Example Output: `results_len9_start123.json`
 ```json
 {
   "metadata": {
@@ -147,21 +121,9 @@ All results are saved to auto-generated JSON files with comprehensive metadata:
       "number": "123456789",
       "position": 523551,
       "position_formatted": "523,551"
-    },
-    {
-      "match_number": 2,
-      "number": "123789456",
-      "position": 891234,
-      "position_formatted": "891,234"
     }
   ]
 }
 ```
 
-### Output Filenames
-Filenames are automatically generated based on search type:
-- **Bruteforce**: `results_len9_start123.json`
-- **Regex**: `results_regex_12_0_9__3_45.json`
-- **Range**: `results_range_123000000_123999999.json`
-- **Multiple patterns**: `results_len9_multipattern.json`
-- **Direct search**: `results_search_123456.json`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
