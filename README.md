@@ -1,12 +1,10 @@
 <a name="readme-top"></a>
 
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <h3 align="center">Pi Bruteforce | Number Finder</h3>
 </div>
 
-<!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
 - [About The Project](#about-the-project)
@@ -17,7 +15,6 @@
 - [Usage](#usage)
 - [Output Format](#output-format)
 
-<!-- ABOUT THE PROJECT -->
 ## About The Project
 
 **Pi Bruteforce** is a high-performance, multi-threaded tool for finding number sequences within the digits of Pi. According to the **Pi Search** theory, any finite sequence of digits should eventually appear in Pi including phone numbers, birthdays, SSNs, and more.
@@ -34,7 +31,6 @@
 
 * [![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python&logoColor=white)](https://www.python.org/)
 
-<!-- GETTING STARTED -->
 ## Getting Started
 
 ### Prerequisites
@@ -61,7 +57,6 @@ Python 3.12 or newer.
    ```
    This creates a binary compressed cache (`pi_cache.pkl.gz`) for fast searches.
 
-<!-- USAGE EXAMPLES -->
 ## Usage
 
 View all options:
